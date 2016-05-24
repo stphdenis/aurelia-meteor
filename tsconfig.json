@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "sourceMap": false,
+    "declaration": true,
+    "outDir": "./build",
+    "rootDir": "./modules"
+  },
+  "files": [
+    "modules/index.ts",
+    "typings/main.d.ts"
+  ],
+  "exclude": [
+    "examples",
+    "node_modules",
+    "atmosphere-packages"
+  ]
+}
