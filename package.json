@@ -1,6 +1,6 @@
 {
   "name": "aurelia-meteor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "aurelia",
     "aurelia-meteor",
@@ -16,8 +16,8 @@
   "typings": "build/index.d.ts",
   "homepage": "http://www.aurelia-meteor.com",
   "repository": "https://github.com/sdenis/aurelia-meteor/",
-  "description": "Angular 2.0 and Meteor - the perfect stack http://www.aurelia-meteor.com/",
-  "author": "Angular2-Meteor (https://github.com/sdenis/aurelia-meteor)",
+  "description": "Aurelia and Meteor - the perfect stack http://www.aurelia-meteor.com/",
+  "author": "Aurelia-Meteor (https://github.com/sdenis/aurelia-meteor)",
   "license": "MIT",
   "scripts": {
     "build": "gulp build",
@@ -34,8 +34,6 @@
     "zone.js": "^0.6.12",
     "rxjs": "5.0.0-beta.6",
     "reflect-metadata": "0.1.2",
-    "ghooks": "^1.2.1",
-    "validate-commit-msg": "^2.6.1",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-git": "^1.7.0",
@@ -46,10 +44,5 @@
     "tslint": "^3.6.0",
     "typescript": "^1.7.5",
     "typings": "^0.7.7"
-  },
-  "config": {
-    "ghooks": {
-      "commit-msg": "validate-commit-msg"
-    }
   }
 }

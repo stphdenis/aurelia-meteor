@@ -1,2 +1,8 @@
 .meteor/local
 .meteor/meteorite
+node_modules
+.node_modules
+.idea
+typings
+atmosphere-packages/examples
+.npm

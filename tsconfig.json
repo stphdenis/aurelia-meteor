@@ -14,7 +14,7 @@
   },
   "files": [
     "modules/index.ts",
-    "typings/main.d.ts"
+    "typings/index.d.ts"
   ],
   "exclude": [
     "examples",
