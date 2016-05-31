@@ -43,9 +43,12 @@ gulp.task('tag', function(callback) {
   );
 });
 
-gulp.task('npm-publish', function (done) {
-  require('child_process').spawn('npm', ['publish'], { stdio: 'inherit' })
-    .on('close', done);
+var exec = require('child_process').exec;
+gulp.task('npm-publish', function () {
+  exec('npm publish', {cwd: process.cwd()}, function(err, stdout, stderr){
+    if (err) return console.error(err);
+    if (!opt.quiet) gutil.log(stdout, stderr);
+  });
 });
 
 gulp.task('publish', function(callback) {
