@@ -23,6 +23,7 @@ require('./build-ts');
 // require('./build-js');
 require('./build-cleaner');
 require('./prepare-release');
+require('./publish');
 
 /*gulp.task('build-dts', function(){
   return gulp.src(paths.root + 'index.d.ts')

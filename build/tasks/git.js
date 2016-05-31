@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var git = require("gulp-git");
+var publish = require("gulp-npm-publish");
 
 var paths = require('../paths');
 var git_src = ['.', "./build/*", "./" + paths.output + "*", "./" + paths.root + "*"];
