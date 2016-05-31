@@ -44,6 +44,7 @@ gulp.task('tag', function(callback) {
 });
 
 var exec = require('child_process').exec;
+var gutil = require('gulp-util');
 gulp.task('npm-publish', function () {
   exec('npm publish', {cwd: process.cwd()}, function(err, stdout, stderr){
     if (err) return console.error(err);
