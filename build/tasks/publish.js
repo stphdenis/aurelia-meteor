@@ -48,7 +48,7 @@ var gutil = require('gulp-util');
 gulp.task('npm-publish', function () {
   exec('npm publish', {cwd: process.cwd()}, function(err, stdout, stderr){
     if (err) return console.error(err);
-    gutil.log(stdout, stderr);
+    //gutil.log(stdout, stderr);
   });
 });
 
