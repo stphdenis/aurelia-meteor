@@ -1,5 +1,4 @@
 var path = require('path');
-
 var paths = require('./paths');
 
 exports.base = function() {
@@ -12,22 +11,22 @@ exports.base = function() {
     moduleIds: false,
     comments: false,
     compact: false,
-    code:true,
-    presets: [ 'es2015-loose', 'stage-1'],
+    code: true,
+    presets: ['es2015-loose', 'stage-1'],
     plugins: [
       'syntax-flow',
       'transform-decorators-legacy',
       ['babel-dts-generator', {
-          packageName: paths.packageName,
-          typings: '',
-          suppressModulePath: true,
-          suppressComments: false,
-          memberOutputFilter: /^_.*/
+        packageName: paths.packageName,
+        typings: '',
+        suppressModulePath: true,
+        suppressComments: false,
+        memberOutputFilter: /^_.*/
       }],
       'transform-flow-strip-types'
     ]
   };
-}
+};
 
 exports.commonjs = function() {
   var options = exports.base();

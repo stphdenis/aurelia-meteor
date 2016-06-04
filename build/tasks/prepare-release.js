@@ -1,11 +1,9 @@
-var fs = require('fs');
-
 var gulp = require('gulp');
-var bump = require('gulp-bump');
 var runSequence = require('run-sequence');
-var changelog = require('conventional-changelog');
-
 var paths = require('../paths');
+var changelog = require('conventional-changelog');
+var fs = require('fs');
+var bump = require('gulp-bump');
 var args = require('../args');
 
 gulp.task('bump-version', function(){
@@ -29,7 +27,7 @@ gulp.task('changelog', function(callback) {
 gulp.task('prepare-release', function(callback){
   return runSequence(
     'build',
-    'lint',
+    //'lint',
     'bump-version',
     'doc',
     'changelog',

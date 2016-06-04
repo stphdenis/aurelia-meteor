@@ -1,3 +1,5 @@
-atmosphere-packages
-tests
+jspm_packages
+bower_components
+.idea
+node_modules
 npm-debug.log
