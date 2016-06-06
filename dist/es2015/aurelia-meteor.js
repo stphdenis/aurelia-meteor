@@ -1,3 +1,6 @@
+import { BlazeAdapter } from './blaze-adapter';
+import { LoginButtons } from './login-buttons';
+
 function configure(config) {
   if (FEATURE.shadowDOM) {
     DOM.injectStyles('body /deep/ .aurelia-hide { display:none !important; }');
@@ -16,3 +19,5 @@ function configure(config) {
     }
   });
 }
+
+export { BlazeAdapter, LoginButtons };

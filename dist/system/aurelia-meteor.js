@@ -1,7 +1,10 @@
 'use strict';
 
-System.register([], function (_export, _context) {
+System.register(['./blaze-adapter', './login-buttons'], function (_export, _context) {
   "use strict";
+
+  var BlazeAdapter, LoginButtons;
+
 
   function configure(config) {
     if (FEATURE.shadowDOM) {
@@ -23,8 +26,17 @@ System.register([], function (_export, _context) {
       }
     });
   }
+
   return {
-    setters: [],
-    execute: function () {}
+    setters: [function (_blazeAdapter) {
+      BlazeAdapter = _blazeAdapter.BlazeAdapter;
+    }, function (_loginButtons) {
+      LoginButtons = _loginButtons.LoginButtons;
+    }],
+    execute: function () {
+      _export('BlazeAdapter', BlazeAdapter);
+
+      _export('LoginButtons', LoginButtons);
+    }
   };
 });

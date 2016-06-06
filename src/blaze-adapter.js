@@ -25,7 +25,7 @@ export class BlazeAdapter {
     throw new Error('BlazeAdapter.templateName() has to be implemented');
   }
 
-  properties(): Map | Function {
+  properties(): Map<string, string> | Function {
     throw new Error('BlazeAdapter.properties() has to be implemented');
   }
 

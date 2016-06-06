@@ -1,5 +1,11 @@
-define([], function () {
+define(['exports', './blaze-adapter', './login-buttons'], function (exports, _blazeAdapter, _loginButtons) {
   'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.LoginButtons = exports.BlazeAdapter = undefined;
+
 
   function configure(config) {
     if (FEATURE.shadowDOM) {
@@ -21,4 +27,7 @@ define([], function () {
       }
     });
   }
+
+  exports.BlazeAdapter = _blazeAdapter.BlazeAdapter;
+  exports.LoginButtons = _loginButtons.LoginButtons;
 });

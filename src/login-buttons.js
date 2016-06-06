@@ -9,7 +9,7 @@ export class LoginButtons extends BlazeAdapter {
     return 'loginButtons';
   }
 
-  properties(): Map {
+  properties(): Map<string, string> {
     return {align: this.align};
   }
 }

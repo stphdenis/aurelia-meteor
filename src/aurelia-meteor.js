@@ -1,4 +1,7 @@
-function configure(config) { //  no-unused-vars
+import { BlazeAdapter } from './blaze-adapter';
+import { LoginButtons } from './login-buttons';
+
+function configure(config: Mat<string, any>) { // eslint-disable-line no-unused-vars
   if (FEATURE.shadowDOM) {
     DOM.injectStyles('body /deep/ .aurelia-hide { display:none !important; }');
   } else {
@@ -13,8 +16,13 @@ function configure(config) { //  no-unused-vars
 
   let viewEngine = config.container.get(ViewEngine);
   viewEngine.addResourcePlugin('.css', {
-    'fetch': function(address) {
+    'fetch': function(address: string): Map<string, any> {
       return { [address]: _createCSSResource(address) };
     }
   });
 }
+
+export {
+  BlazeAdapter,
+  LoginButtons
+};
