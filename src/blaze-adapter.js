@@ -1,7 +1,7 @@
 import { Blaze } from 'meteor/blaze';
 import { Template } from 'meteor/templating';
 
-import { autoinject, inlineView } from 'aurelia-framework';
+import { inject, inlineView } from 'aurelia-framework';
 
 /**
  * If want to inject into the extended class, you have to inject the current Element
@@ -12,19 +12,24 @@ import { autoinject, inlineView } from 'aurelia-framework';
  *   }
  */
 @inlineView('<template></template>')
-@autoinject
-export abstract class BlazeAdapter {
-  private _view: Blaze.View;
-  private _element: Element;
+@inject(Element)
+export class BlazeAdapter {//abstract
+  _view: Blaze.View;//private
+  _element: Element;//private
 
-  public abstract templateName(): string;
-  public abstract properties(): {} | Function;
+  templateName(): string {//public abstract
+    throw new Error('BlazeAdapter.templateName() has to be implemented');
+  }
+
+  properties(): Map | Function {//public abstract
+    throw new Error('BlazeAdapter.properties() has to be implemented');
+  }
 
   constructor(elementRef: Element) {
     this._element = elementRef;
   }
 
-  public bind(bindingContext: Object, overrideContext: Object): void {
+  bind(bindingContext: Object, overrideContext: Object) {//public
     this._view = Blaze.renderWithData(
       Template[this.templateName()],
       this.properties(),
@@ -32,7 +37,7 @@ export abstract class BlazeAdapter {
     );
   }
 
-  public unbind(): void {
+  unbind() {//public
     Blaze.remove(this._view);
   }
 }

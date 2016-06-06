@@ -1,0 +1,485 @@
+{
+  "id": 2,
+  "name": "\"aurelia-meteor\"",
+  "kind": 2,
+  "kindString": "Module",
+  "flags": {},
+  "children": [
+    {
+      "id": 3,
+      "name": "BlazeAdapter",
+      "kind": 128,
+      "kindString": "Class",
+      "flags": {
+        "isExported": true
+      },
+      "comment": {
+        "shortText": "If want to inject into the extended class, you have to inject the current Element\nand pass it to super() :\n  constructor(elementRef: Element, xxx: Ttt) {\n    super(elementRef);\n    this.xxx = xxx;\n  }"
+      },
+      "children": [
+        {
+          "id": 9,
+          "name": "constructor",
+          "kind": 512,
+          "kindString": "Constructor",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 10,
+              "name": "new BlazeAdapter",
+              "kind": 16384,
+              "kindString": "Constructor signature",
+              "flags": {},
+              "parameters": [
+                {
+                  "id": 11,
+                  "name": "elementRef",
+                  "kind": 32768,
+                  "kindString": "Parameter",
+                  "flags": {},
+                  "type": {
+                    "type": "reference",
+                    "name": "Element"
+                  }
+                }
+              ],
+              "type": {
+                "type": "reference",
+                "name": "BlazeAdapter",
+                "id": 3,
+                "moduleName": "\"aurelia-meteor\""
+              }
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "name": "bind",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 13,
+              "name": "bind",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "parameters": [
+                {
+                  "id": 14,
+                  "name": "bindingContext",
+                  "kind": 32768,
+                  "kindString": "Parameter",
+                  "flags": {},
+                  "type": {
+                    "type": "reference",
+                    "name": "Object"
+                  }
+                },
+                {
+                  "id": 15,
+                  "name": "overrideContext",
+                  "kind": 32768,
+                  "kindString": "Parameter",
+                  "flags": {},
+                  "type": {
+                    "type": "reference",
+                    "name": "Object"
+                  }
+                }
+              ],
+              "type": {
+                "type": "instrinct",
+                "name": "void"
+              }
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "properties",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 7,
+              "name": "properties",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "type": {
+                "type": "union",
+                "types": [
+                  {
+                    "type": "reflection",
+                    "declaration": {
+                      "id": 8,
+                      "name": "__type",
+                      "kind": 65536,
+                      "kindString": "Type literal",
+                      "flags": {}
+                    }
+                  },
+                  {
+                    "type": "reference",
+                    "name": "Function"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "templateName",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 5,
+              "name": "templateName",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "type": {
+                "type": "instrinct",
+                "name": "string"
+              }
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "name": "unbind",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 17,
+              "name": "unbind",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "type": {
+                "type": "instrinct",
+                "name": "void"
+              }
+            }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "title": "Constructors",
+          "kind": 512,
+          "children": [
+            9
+          ]
+        },
+        {
+          "title": "Methods",
+          "kind": 2048,
+          "children": [
+            12,
+            6,
+            4,
+            16
+          ]
+        }
+      ],
+      "extendedBy": [
+        {
+          "type": "reference",
+          "name": "LoginButtons",
+          "id": 18
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "LoginButtons",
+      "kind": 128,
+      "kindString": "Class",
+      "flags": {
+        "isExported": true
+      },
+      "children": [
+        {
+          "id": 25,
+          "name": "constructor",
+          "kind": 512,
+          "kindString": "Constructor",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 26,
+              "name": "new LoginButtons",
+              "kind": 16384,
+              "kindString": "Constructor signature",
+              "flags": {},
+              "parameters": [
+                {
+                  "id": 27,
+                  "name": "elementRef",
+                  "kind": 32768,
+                  "kindString": "Parameter",
+                  "flags": {},
+                  "type": {
+                    "type": "reference",
+                    "name": "Element"
+                  }
+                }
+              ],
+              "type": {
+                "type": "reference",
+                "name": "LoginButtons",
+                "id": 18,
+                "moduleName": "\"aurelia-meteor\""
+              },
+              "inheritedFrom": {
+                "type": "reference",
+                "name": "BlazeAdapter.__constructor",
+                "id": 9
+              }
+            }
+          ],
+          "inheritedFrom": {
+            "type": "reference",
+            "name": "BlazeAdapter.__constructor",
+            "id": 9
+          }
+        },
+        {
+          "id": 19,
+          "name": "align",
+          "kind": 1024,
+          "kindString": "Property",
+          "flags": {
+            "isExported": true
+          },
+          "type": {
+            "type": "instrinct",
+            "name": "string"
+          }
+        },
+        {
+          "id": 28,
+          "name": "bind",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 29,
+              "name": "bind",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "parameters": [
+                {
+                  "id": 30,
+                  "name": "bindingContext",
+                  "kind": 32768,
+                  "kindString": "Parameter",
+                  "flags": {},
+                  "type": {
+                    "type": "reference",
+                    "name": "Object"
+                  }
+                },
+                {
+                  "id": 31,
+                  "name": "overrideContext",
+                  "kind": 32768,
+                  "kindString": "Parameter",
+                  "flags": {},
+                  "type": {
+                    "type": "reference",
+                    "name": "Object"
+                  }
+                }
+              ],
+              "type": {
+                "type": "instrinct",
+                "name": "void"
+              },
+              "inheritedFrom": {
+                "type": "reference",
+                "name": "BlazeAdapter.bind",
+                "id": 12
+              }
+            }
+          ],
+          "inheritedFrom": {
+            "type": "reference",
+            "name": "BlazeAdapter.bind",
+            "id": 12
+          }
+        },
+        {
+          "id": 22,
+          "name": "properties",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 23,
+              "name": "properties",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "type": {
+                "type": "reflection",
+                "declaration": {
+                  "id": 24,
+                  "name": "__type",
+                  "kind": 65536,
+                  "kindString": "Type literal",
+                  "flags": {}
+                }
+              },
+              "overwrites": {
+                "type": "reference",
+                "name": "BlazeAdapter.properties",
+                "id": 6
+              }
+            }
+          ],
+          "overwrites": {
+            "type": "reference",
+            "name": "BlazeAdapter.properties",
+            "id": 6
+          }
+        },
+        {
+          "id": 20,
+          "name": "templateName",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 21,
+              "name": "templateName",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "type": {
+                "type": "instrinct",
+                "name": "string"
+              },
+              "overwrites": {
+                "type": "reference",
+                "name": "BlazeAdapter.templateName",
+                "id": 4
+              }
+            }
+          ],
+          "overwrites": {
+            "type": "reference",
+            "name": "BlazeAdapter.templateName",
+            "id": 4
+          }
+        },
+        {
+          "id": 32,
+          "name": "unbind",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 33,
+              "name": "unbind",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "type": {
+                "type": "instrinct",
+                "name": "void"
+              },
+              "inheritedFrom": {
+                "type": "reference",
+                "name": "BlazeAdapter.unbind",
+                "id": 16
+              }
+            }
+          ],
+          "inheritedFrom": {
+            "type": "reference",
+            "name": "BlazeAdapter.unbind",
+            "id": 16
+          }
+        }
+      ],
+      "groups": [
+        {
+          "title": "Constructors",
+          "kind": 512,
+          "children": [
+            25
+          ]
+        },
+        {
+          "title": "Properties",
+          "kind": 1024,
+          "children": [
+            19
+          ]
+        },
+        {
+          "title": "Methods",
+          "kind": 2048,
+          "children": [
+            28,
+            22,
+            20,
+            32
+          ]
+        }
+      ],
+      "extendedTypes": [
+        {
+          "type": "reference",
+          "name": "BlazeAdapter",
+          "id": 3
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "title": "Classes",
+      "kind": 128,
+      "children": [
+        3,
+        18
+      ]
+    }
+  ]
+}

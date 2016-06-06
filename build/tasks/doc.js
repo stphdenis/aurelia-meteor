@@ -1,21 +1,20 @@
 var gulp = require('gulp');
-var typedoc = require('gulp-typedoc');
+var paths = require('../paths');
+var typedoc = require('gulp-typedoc');
 var typedocExtractor = require('gulp-typedoc-extractor');
 var runSequence = require('run-sequence');
-
-var paths = require('../paths');
 
 gulp.task('doc-generate', function(){
   return gulp.src([paths.output + '*.d.ts', paths.doc + '/core-js.d.ts', './jspm_packages/npm/*/*.d.ts'])
     .pipe(typedoc({
-      target: 'es6',
-      includeDeclarations: true,
-      json: paths.doc + '/api.json',
-      name: paths.packageName + '-docs',
+      target: 'es6',
+      includeDeclarations: true,
+      json: paths.doc + '/api.json',
+      name: paths.packageName + '-docs', 
       mode: 'modules',
       excludeExternals: true,
-      ignoreCompilerErrors: false,
-      version: true
+      ignoreCompilerErrors: false,
+      version: true
     }));
 });
 
