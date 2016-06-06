@@ -95,8 +95,8 @@
   "main": "dist/commonjs/aurelia-meteor.js",
   "maintainers": [
     {
-      "email": "info@durandal.io",
-      "name": "aureliaeffect"
+      "email": "stph.denis@gmail.com",
+      "name": "Stéphane Denis"
     }
   ],
   "name": "aurelia-meteor",
