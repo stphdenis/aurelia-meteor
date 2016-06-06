@@ -4,7 +4,7 @@
     "name": "Stéphane Denis"
   },
   "bugs": {
-    "url": "https://github.com/stphdenis/meteor/issues"
+    "url": "https://github.com/stphdenis/aurelia-meteor/issues"
   },
   "dependencies": {
     "aurelia-framework": "^1.0.0-beta.1.2.5",
@@ -101,10 +101,9 @@
   ],
   "name": "aurelia-meteor",
   "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/stphdenis/meteor.git"
+    "url": "git+ssh://git@github.com/stphdenis/aurelia-meteor.git"
   },
   "scripts": {},
   "version": "1.0.1"
