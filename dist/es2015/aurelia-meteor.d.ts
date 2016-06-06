@@ -10,7 +10,7 @@ declare module 'aurelia-meteor' {
     inlineView,
     bindable
   } from 'aurelia-framework';
-  
+
   /**
    * If want to inject into the extended class, you have to inject the current Element
    * and pass it to super() :
@@ -20,29 +20,15 @@ declare module 'aurelia-meteor' {
    *   }
    */
   export class BlazeAdapter {
-    
-    //abstract
-    _view: undefined;
-    
-    //private
-    _element: Element;
-    
-    //private
-    templateName(): string;
-    properties(): Map | Function;
     constructor(elementRef: Element);
+    templateName(): string;
+    properties(): Map<string, string> | Function;
     bind(bindingContext: Object, overrideContext: Object): any;
     unbind(): any;
   }
   export class LoginButtons extends BlazeAdapter {
     align: string;
-    
-    //public
     templateName(): string;
-    properties(): Map;
+    properties(): Map<string, string>;
   }
-  export {
-    BlazeAdapter,
-    LoginButtons
-  };
 }

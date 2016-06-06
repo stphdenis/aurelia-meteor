@@ -1,10 +1,7 @@
 'use strict';
 
-System.register(['./blaze-adapter', './login-buttons'], function (_export, _context) {
+System.register([], function (_export, _context) {
   "use strict";
-
-  var BlazeAdapter, LoginButtons;
-
 
   function configure(config) {
     if (FEATURE.shadowDOM) {
@@ -13,7 +10,7 @@ System.register(['./blaze-adapter', './login-buttons'], function (_export, _cont
       DOM.injectStyles('.aurelia-hide { display:none !important; }');
     }
 
-    config.globalResources('./blaze-adapter', './login-buttons');
+    config.globalResources('./login-buttons');
 
     configureHtmlResourcePlugin(config);
 
@@ -26,17 +23,8 @@ System.register(['./blaze-adapter', './login-buttons'], function (_export, _cont
       }
     });
   }
-
   return {
-    setters: [function (_blazeAdapter) {
-      BlazeAdapter = _blazeAdapter.BlazeAdapter;
-    }, function (_loginButtons) {
-      LoginButtons = _loginButtons.LoginButtons;
-    }],
-    execute: function () {
-      _export('BlazeAdapter', BlazeAdapter);
-
-      _export('LoginButtons', LoginButtons);
-    }
+    setters: [],
+    execute: function () {}
   };
 });

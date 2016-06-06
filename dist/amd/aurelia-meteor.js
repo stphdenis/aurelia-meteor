@@ -1,11 +1,5 @@
-define(['exports', './blaze-adapter', './login-buttons'], function (exports, _blazeAdapter, _loginButtons) {
+define([], function () {
   'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.LoginButtons = exports.BlazeAdapter = undefined;
-
 
   function configure(config) {
     if (FEATURE.shadowDOM) {
@@ -14,7 +8,7 @@ define(['exports', './blaze-adapter', './login-buttons'], function (exports, _bl
       DOM.injectStyles('.aurelia-hide { display:none !important; }');
     }
 
-    config.globalResources('./blaze-adapter', './login-buttons');
+    config.globalResources('./login-buttons');
 
     configureHtmlResourcePlugin(config);
 
@@ -27,7 +21,4 @@ define(['exports', './blaze-adapter', './login-buttons'], function (exports, _bl
       }
     });
   }
-
-  exports.BlazeAdapter = _blazeAdapter.BlazeAdapter;
-  exports.LoginButtons = _loginButtons.LoginButtons;
 });

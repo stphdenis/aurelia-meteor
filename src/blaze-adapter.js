@@ -13,23 +13,23 @@ import { inject, inlineView } from 'aurelia-framework';
  */
 @inlineView('<template></template>')
 @inject(Element)
-export class BlazeAdapter {//abstract
-  _view: Blaze.View;//private
-  _element: Element;//private
-
-  templateName(): string {//public abstract
-    throw new Error('BlazeAdapter.templateName() has to be implemented');
-  }
-
-  properties(): Map | Function {//public abstract
-    throw new Error('BlazeAdapter.properties() has to be implemented');
-  }
+export class BlazeAdapter {
+  _view: Blaze.View;
+  _element: Element;
 
   constructor(elementRef: Element) {
     this._element = elementRef;
   }
 
-  bind(bindingContext: Object, overrideContext: Object) {//public
+  templateName(): string {
+    throw new Error('BlazeAdapter.templateName() has to be implemented');
+  }
+
+  properties(): Map<string, string> | Function {
+    throw new Error('BlazeAdapter.properties() has to be implemented');
+  }
+
+  bind(bindingContext: Object, overrideContext: Object) {
     this._view = Blaze.renderWithData(
       Template[this.templateName()],
       this.properties(),
@@ -37,7 +37,7 @@ export class BlazeAdapter {//abstract
     );
   }
 
-  unbind() {//public
+  unbind() {
     Blaze.remove(this._view);
   }
 }

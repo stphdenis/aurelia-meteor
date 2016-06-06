@@ -22,6 +22,12 @@ System.register(['meteor/blaze', 'meteor/templating', 'aurelia-framework'], func
     }],
     execute: function () {
       _export('BlazeAdapter', BlazeAdapter = (_dec = inlineView('<template></template>'), _dec2 = inject(Element), _dec(_class = _dec2(_class = function () {
+        function BlazeAdapter(elementRef) {
+          _classCallCheck(this, BlazeAdapter);
+
+          this._element = elementRef;
+        }
+
         BlazeAdapter.prototype.templateName = function templateName() {
           throw new Error('BlazeAdapter.templateName() has to be implemented');
         };
@@ -29,12 +35,6 @@ System.register(['meteor/blaze', 'meteor/templating', 'aurelia-framework'], func
         BlazeAdapter.prototype.properties = function properties() {
           throw new Error('BlazeAdapter.properties() has to be implemented');
         };
-
-        function BlazeAdapter(elementRef) {
-          _classCallCheck(this, BlazeAdapter);
-
-          this._element = elementRef;
-        }
 
         BlazeAdapter.prototype.bind = function bind(bindingContext, overrideContext) {
           this._view = Blaze.renderWithData(Template[this.templateName()], this.properties(), this._element);

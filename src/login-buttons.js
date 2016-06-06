@@ -3,13 +3,13 @@ import { bindable } from 'aurelia-framework';
 import { BlazeAdapter } from './blaze-adapter';
 
 export class LoginButtons extends BlazeAdapter {
-  @bindable align: string;//public
+  @bindable align: string;
 
-  templateName(): string {//public
+  templateName(): string {
     return 'loginButtons';
   }
 
-  properties(): Map {//public
+  properties(): Map<string, string> {
     return {align: this.align};
   }
 }

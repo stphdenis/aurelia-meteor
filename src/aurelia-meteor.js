@@ -1,6 +1,3 @@
-import { BlazeAdapter } from './blaze-adapter';
-import { LoginButtons } from './login-buttons';
-
 function configure(config: Map) { // eslint-disable-line no-unused-vars
   if (FEATURE.shadowDOM) {
     DOM.injectStyles('body /deep/ .aurelia-hide { display:none !important; }');
@@ -21,8 +18,3 @@ function configure(config: Map) { // eslint-disable-line no-unused-vars
     }
   });
 }
-
-export {
-  BlazeAdapter,
-  LoginButtons
-};

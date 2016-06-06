@@ -4,9 +4,6 @@
     "flowtype"
   ],
   "rules": {
-    // tant que pas mis à jour dans aurelia-tools/.eslintrc
-    "keyword-spacing": 2,       // http://eslint.org/docs/rules/keyword-spacing
-
     "flowtype/require-parameter-type": 1,
     "flowtype/require-return-type": [
         1,

@@ -12,23 +12,23 @@ import {inject,inlineView,bindable} from 'aurelia-framework';
  */
 @inlineView('<template></template>')
 @inject(Element)
-export class BlazeAdapter {//abstract
-  _view: Blaze.View;//private
-  _element: Element;//private
-
-  templateName(): string {//public abstract
-    throw new Error('BlazeAdapter.templateName() has to be implemented');
-  }
-
-  properties(): Map | Function {//public abstract
-    throw new Error('BlazeAdapter.properties() has to be implemented');
-  }
+export class BlazeAdapter {
+  _view: Blaze.View;
+  _element: Element;
 
   constructor(elementRef: Element) {
     this._element = elementRef;
   }
 
-  bind(bindingContext: Object, overrideContext: Object) {//public
+  templateName(): string {
+    throw new Error('BlazeAdapter.templateName() has to be implemented');
+  }
+
+  properties(): Map<string, string> | Function {
+    throw new Error('BlazeAdapter.properties() has to be implemented');
+  }
+
+  bind(bindingContext: Object, overrideContext: Object) {
     this._view = Blaze.renderWithData(
       Template[this.templateName()],
       this.properties(),
@@ -36,24 +36,12 @@ export class BlazeAdapter {//abstract
     );
   }
 
-  unbind() {//public
+  unbind() {
     Blaze.remove(this._view);
   }
 }
 
-export class LoginButtons extends BlazeAdapter {
-  @bindable align: string;//public
-
-  templateName(): string {//public
-    return 'loginButtons';
-  }
-
-  properties(): Map {//public
-    return {align: this.align};
-  }
-}
-
-function configure(config) {
+function configure(config: Map) { // eslint-disable-line no-unused-vars
   if (FEATURE.shadowDOM) {
     DOM.injectStyles('body /deep/ .aurelia-hide { display:none !important; }');
   } else {
@@ -61,7 +49,6 @@ function configure(config) {
   }
 
   config.globalResources(
-    './blaze-adapter',
     './login-buttons'
   );
 
@@ -69,13 +56,20 @@ function configure(config) {
 
   let viewEngine = config.container.get(ViewEngine);
   viewEngine.addResourcePlugin('.css', {
-    'fetch': function(address) {
+    'fetch': function(address: string): Map {
       return { [address]: _createCSSResource(address) };
     }
   });
 }
 
-export {
-  BlazeAdapter,
-  LoginButtons
-};
+export class LoginButtons extends BlazeAdapter {
+  @bindable align: string;
+
+  templateName(): string {
+    return 'loginButtons';
+  }
+
+  properties(): Map<string, string> {
+    return {align: this.align};
+  }
+}

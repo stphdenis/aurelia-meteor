@@ -1,6 +1,3 @@
-import { BlazeAdapter } from './blaze-adapter';
-import { LoginButtons } from './login-buttons';
-
 function configure(config) {
   if (FEATURE.shadowDOM) {
     DOM.injectStyles('body /deep/ .aurelia-hide { display:none !important; }');
@@ -8,7 +5,7 @@ function configure(config) {
     DOM.injectStyles('.aurelia-hide { display:none !important; }');
   }
 
-  config.globalResources('./blaze-adapter', './login-buttons');
+  config.globalResources('./login-buttons');
 
   configureHtmlResourcePlugin(config);
 
@@ -19,5 +16,3 @@ function configure(config) {
     }
   });
 }
-
-export { BlazeAdapter, LoginButtons };

@@ -7,16 +7,16 @@ import { inject, inlineView } from 'aurelia-framework';
 
 export let BlazeAdapter = (_dec = inlineView('<template></template>'), _dec2 = inject(Element), _dec(_class = _dec2(_class = class BlazeAdapter {
 
+  constructor(elementRef) {
+    this._element = elementRef;
+  }
+
   templateName() {
     throw new Error('BlazeAdapter.templateName() has to be implemented');
   }
 
   properties() {
     throw new Error('BlazeAdapter.properties() has to be implemented');
-  }
-
-  constructor(elementRef) {
-    this._element = elementRef;
   }
 
   bind(bindingContext, overrideContext) {
