@@ -24,7 +24,7 @@ export class BlazeAdapter {
     throw new Error('BlazeAdapter.templateName() has to be implemented');
   }
 
-  properties(): Map<string, string> | Function {
+  properties(): Map | Function {
     throw new Error('BlazeAdapter.properties() has to be implemented');
   }
 
@@ -41,27 +41,6 @@ export class BlazeAdapter {
   }
 }
 
-function configure(config: Map) { // eslint-disable-line no-unused-vars
-  if (FEATURE.shadowDOM) {
-    DOM.injectStyles('body /deep/ .aurelia-hide { display:none !important; }');
-  } else {
-    DOM.injectStyles('.aurelia-hide { display:none !important; }');
-  }
-
-  config.globalResources(
-    './login-buttons'
-  );
-
-  configureHtmlResourcePlugin(config);
-
-  let viewEngine = config.container.get(ViewEngine);
-  viewEngine.addResourcePlugin('.css', {
-    'fetch': function(address: string): Map {
-      return { [address]: _createCSSResource(address) };
-    }
-  });
-}
-
 export class LoginButtons extends BlazeAdapter {
   @bindable align: string;
 
@@ -69,7 +48,7 @@ export class LoginButtons extends BlazeAdapter {
     return 'loginButtons';
   }
 
-  properties(): Map<string, string> {
+  properties(): Map {
     return {align: this.align};
   }
 }

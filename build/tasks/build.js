@@ -28,7 +28,7 @@ gulp.task('build-index', function() {
 
   return gulp.src(paths.source)
     .pipe(tools.sortFiles())
-    .pipe(gulpIgnore.exclude('aurelia-templating-resources.js'))
+    .pipe(gulpIgnore.exclude(jsName))
     .pipe(through2.obj(function(file, enc, callback) {
       file.contents = new Buffer(tools.extractImports(file.contents.toString('utf8'), importsToAdd));
       this.push(file);

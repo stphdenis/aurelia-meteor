@@ -26,7 +26,7 @@ exports.base = function() {
       'transform-flow-strip-types'
     ]
   };
-}
+};
 
 exports.commonjs = function() {
   var options = exports.base();
@@ -48,6 +48,6 @@ exports.system = function() {
 
 exports.es2015 = function() {
   var options = exports.base();
-  options.presets = ['stage-1']
+  options.presets = ['stage-1'];
   return options;
 };

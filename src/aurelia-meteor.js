@@ -1,4 +1,4 @@
-function configure(config: Map) { // eslint-disable-line no-unused-vars
+function configure(config) { //  no-unused-vars
   if (FEATURE.shadowDOM) {
     DOM.injectStyles('body /deep/ .aurelia-hide { display:none !important; }');
   } else {
@@ -13,7 +13,7 @@ function configure(config: Map) { // eslint-disable-line no-unused-vars
 
   let viewEngine = config.container.get(ViewEngine);
   viewEngine.addResourcePlugin('.css', {
-    'fetch': function(address: string): Map {
+    'fetch': function(address) {
       return { [address]: _createCSSResource(address) };
     }
   });
