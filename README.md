@@ -15,6 +15,16 @@ The SystemJS configuration is to be done for the folowing modules :
   - meteor/blaze
   - meteor/templating
 
+## Library content
+
+For now, we only have <login-buttons> we can put anywhere in a HTML file.
+
+  ```js
+  <require from="aurelia-meteor/login-buttons"></require>
+
+  <login-buttons></login-buttons>
+  ```
+
 ## Building The Code
 
 To build the code, follow these steps.
