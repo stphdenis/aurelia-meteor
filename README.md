@@ -19,10 +19,18 @@ The SystemJS configuration is to be done for the folowing modules :
 
 For now, we only have `<login-buttons>` we can put anywhere in a HTML file.
 
-  ```js
+  ```html
   <require from="aurelia-meteor/login-buttons"></require>
 
   <login-buttons></login-buttons>
+  ```
+
+and
+
+  ```shell
+  meteor add accounts-password
+  meteor add accounts-ui
+  npm install --save aurelia-meteor
   ```
 
 ## Building The Code
