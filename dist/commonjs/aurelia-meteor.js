@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.LoginButtons = exports.BlazeAdapter = undefined;
 
+require('aurelia-bootstrapper-meteor');
+
 var _blazeAdapter = require('./blaze-adapter');
 
 var _loginButtons = require('./login-buttons');
