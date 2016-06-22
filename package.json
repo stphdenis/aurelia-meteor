@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "aurelia-framework": "^1.0.0-beta.2.0.1",
-    "aurelia-logging": "^1.0.0-beta.2.0.1",
+    "aurelia-logging": "^1.0.0-beta.2.0.1"
   },
   "description": "A Meteor adapter for Aurelia.",
   "devDependencies": {
