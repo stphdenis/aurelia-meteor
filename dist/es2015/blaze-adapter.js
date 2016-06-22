@@ -16,6 +16,7 @@ export let BlazeAdapter = (_dec = inlineView('<template></template>'), _dec2 = i
   }
 
   properties() {
+
     throw new Error('BlazeAdapter.properties() has to be implemented');
   }
 

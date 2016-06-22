@@ -14,8 +14,8 @@ import { inject, inlineView } from 'aurelia-framework';
 @inlineView('<template></template>')
 @inject(Element)
 export class BlazeAdapter {
-  _view: Blaze.View;
-  _element: Element;
+//  _view: Blaze.View; // private
+//  _element: Element; // private
 
   constructor(elementRef: Element) {
     this._element = elementRef;
@@ -25,7 +25,8 @@ export class BlazeAdapter {
     throw new Error('BlazeAdapter.templateName() has to be implemented');
   }
 
-  properties(): Map<string, string> | Function {
+  properties(): any { // {[key: string]: string} | Function
+
     throw new Error('BlazeAdapter.properties() has to be implemented');
   }
 

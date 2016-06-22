@@ -1,15 +1,25 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
-        "moduleResolution": "node",
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "sourceMap": true,
-        "rootDir": "."
-    },
-    "exclude": [
-        "node_modules", "build", "dist"
-    ],
-    "compileOnSave": false
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "es2015",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": false,
+    "moduleResolution": "node",
+    "stripInternal": true,
+    "preserveConstEnums": true,
+    "listFiles": true,
+    "declaration": true,
+    "removeComments": true,
+    "lib": ["es2015", "dom"],
+    "allowJs": true
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "doc",
+    "test",
+    "config.js",
+    "gulpfile.js",
+    "karma.conf.js"
+  ]
 }

@@ -6,17 +6,13 @@ define(['exports', 'meteor/blaze', 'meteor/templating', 'aurelia-framework'], fu
   });
   exports.BlazeAdapter = undefined;
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
+  
 
   var _dec, _dec2, _class;
 
   var BlazeAdapter = exports.BlazeAdapter = (_dec = (0, _aureliaFramework.inlineView)('<template></template>'), _dec2 = (0, _aureliaFramework.inject)(Element), _dec(_class = _dec2(_class = function () {
     function BlazeAdapter(elementRef) {
-      _classCallCheck(this, BlazeAdapter);
+      
 
       this._element = elementRef;
     }
@@ -26,6 +22,7 @@ define(['exports', 'meteor/blaze', 'meteor/templating', 'aurelia-framework'], fu
     };
 
     BlazeAdapter.prototype.properties = function properties() {
+
       throw new Error('BlazeAdapter.properties() has to be implemented');
     };
 

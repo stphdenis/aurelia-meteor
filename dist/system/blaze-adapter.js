@@ -5,11 +5,7 @@ System.register(['meteor/blaze', 'meteor/templating', 'aurelia-framework'], func
 
   var Blaze, Template, inject, inlineView, _dec, _dec2, _class, BlazeAdapter;
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
+  
 
   return {
     setters: [function (_meteorBlaze) {
@@ -23,7 +19,7 @@ System.register(['meteor/blaze', 'meteor/templating', 'aurelia-framework'], func
     execute: function () {
       _export('BlazeAdapter', BlazeAdapter = (_dec = inlineView('<template></template>'), _dec2 = inject(Element), _dec(_class = _dec2(_class = function () {
         function BlazeAdapter(elementRef) {
-          _classCallCheck(this, BlazeAdapter);
+          
 
           this._element = elementRef;
         }
@@ -33,6 +29,7 @@ System.register(['meteor/blaze', 'meteor/templating', 'aurelia-framework'], func
         };
 
         BlazeAdapter.prototype.properties = function properties() {
+
           throw new Error('BlazeAdapter.properties() has to be implemented');
         };
 

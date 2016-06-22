@@ -15,11 +15,7 @@ System.register(['aurelia-framework', './blaze-adapter'], function (_export, _co
     });
   }
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
+  
 
   function _possibleConstructorReturn(self, call) {
     if (!self) {
@@ -91,7 +87,7 @@ System.register(['aurelia-framework', './blaze-adapter'], function (_export, _co
         function LoginButtons() {
           var _temp, _this, _ret;
 
-          _classCallCheck(this, LoginButtons);
+          
 
           for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
             args[_key] = arguments[_key];

@@ -1,0 +1,23 @@
+export enum StatusEnum {
+  connected,
+  connecting,
+  failed,
+  waiting,
+  offline
+}
+
+export class Meteor {
+  public isClient: boolean;
+  public isCordova: boolean;
+  public isServer: boolean;
+  public release: string;
+  public status: StatusEnum;
+  public connected: boolean;
+  public retryCount: number;
+  public userId: string;
+  public address: string;
+  public verified: boolean;
+  public username: string;
+  public createdAt: number;
+  constructor();
+}
