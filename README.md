@@ -18,33 +18,33 @@ The SystemJS configuration is to be done for the folowing modules :
 ## Library content
 
 For now, we only have 3 components :
-1. `<login-buttons>` we can put anywhere in a HTML file
-2. a `BlazeAdaptor` class used to adapt the `<login-buttons>` to be used in Aurelia
-3. a `Meteor` class giving live informations on meteor
+  - `BlazeAdaptor` class used to adapt the `<login-buttons>` to be used in Aurelia
+  - `<login-buttons>` we can put anywhere in a HTML file
+  - `Meteor` class giving live informations on meteor
 
 ## Library use
 
-# 1. `<login-buttons>`
-
-  ```html
-  <require from="aurelia-meteor/login-buttons"></require>
-
-  <login-buttons></login-buttons>
-  ```
-
-and
-
-  ```shell
-  meteor add accounts-password
-  meteor add accounts-ui
-  npm install --save aurelia-meteor
-  ```
-
-# 2. `BlazeAdaptor` class
+####1. `BlazeAdaptor` class
 
   See the login-buttons.js file to see how it can be used.
 
-# 3. `Meteor` class
+####2. `<login-buttons>`
+
+```html
+<require from="aurelia-meteor/login-buttons"></require>
+
+<login-buttons></login-buttons>
+```
+
+and
+
+```shell
+meteor add accounts-password
+meteor add accounts-ui
+npm install --save aurelia-meteor
+```
+
+####3. `Meteor` class
 
 ```js
 import { autoinject } from 'aurelia-framework';
