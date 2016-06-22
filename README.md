@@ -49,7 +49,7 @@ npm install --save aurelia-meteor
 ```js
 import { autoinject } from 'aurelia-framework';
 import { Meteor } from 'aurelia-meteor';
-
+ 
 @autoinject
 export class Welcome {
   public meteor: Meteor;
