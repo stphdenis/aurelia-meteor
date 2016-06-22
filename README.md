@@ -17,7 +17,14 @@ The SystemJS configuration is to be done for the folowing modules :
 
 ## Library content
 
-For now, we only have `<login-buttons>` we can put anywhere in a HTML file.
+For now, we only have 3 components :
+1. `<login-buttons>` we can put anywhere in a HTML file
+2. a `BlazeAdaptor` class used to adapt the `<login-buttons>` to be used in Aurelia
+3. a `Meteor` class giving live informations on meteor
+
+## Library use
+
+# 1. `<login-buttons>`
 
   ```html
   <require from="aurelia-meteor/login-buttons"></require>
@@ -32,6 +39,43 @@ and
   meteor add accounts-ui
   npm install --save aurelia-meteor
   ```
+
+# 2. `BlazeAdaptor` class
+
+  See the login-buttons.js file to see how it can be used.
+
+# 3. `Meteor` class
+
+```js
+import { autoinject } from 'aurelia-framework';
+import { Meteor } from 'aurelia-meteor';
+
+@autoinject
+export class Welcome {
+  public meteor: Meteor;
+
+  constructor(meteor: Meteor) {
+    this.meteor = meteor;
+  }
+}
+```
+
+```html
+<template>
+  <p>status : ${meteor.status}</p>
+  <p>connected : ${meteor.connected}</p>
+  <p>retryCount : ${meteor.retryCount}</p>
+  <p>userId : ${meteor.userId}</p>
+  <p>isClient : ${meteor.isClient}</p>
+  <p>isCordova : ${meteor.isCordova}</p>
+  <p>isServer : ${meteor.isServer}</p>
+  <p>release : ${meteor.release}</p>
+  <p>address : ${meteor.address}</p>
+  <p>verified : ${meteor.verified}</p>
+  <p>username : ${meteor.username}</p>
+  <p>createdAt : ${meteor.createdAt}</p>
+</template>
+```
 
 ## Building The Code
 

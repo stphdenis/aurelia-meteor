@@ -84,5 +84,5 @@
     "url": "git+ssh://git@github.com/stphdenis/aurelia-meteor.git"
   },
   "scripts": {},
-  "version": "1.0.4"
+  "version": "1.0.5"
 }
