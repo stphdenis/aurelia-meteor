@@ -22,7 +22,6 @@ define(['exports', 'meteor/blaze', 'meteor/templating', 'aurelia-framework'], fu
     };
 
     BlazeAdapter.prototype.properties = function properties() {
-
       throw new Error('BlazeAdapter.properties() has to be implemented');
     };
 

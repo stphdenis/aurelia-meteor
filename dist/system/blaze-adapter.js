@@ -29,7 +29,6 @@ System.register(['meteor/blaze', 'meteor/templating', 'aurelia-framework'], func
         };
 
         BlazeAdapter.prototype.properties = function properties() {
-
           throw new Error('BlazeAdapter.properties() has to be implemented');
         };
 

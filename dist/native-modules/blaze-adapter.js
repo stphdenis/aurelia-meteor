@@ -19,7 +19,6 @@ export var BlazeAdapter = (_dec = inlineView('<template></template>'), _dec2 = i
   };
 
   BlazeAdapter.prototype.properties = function properties() {
-
     throw new Error('BlazeAdapter.properties() has to be implemented');
   };
 

@@ -27,7 +27,6 @@ var BlazeAdapter = exports.BlazeAdapter = (_dec = (0, _aureliaFramework.inlineVi
   };
 
   BlazeAdapter.prototype.properties = function properties() {
-
     throw new Error('BlazeAdapter.properties() has to be implemented');
   };
 

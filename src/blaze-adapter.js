@@ -26,7 +26,6 @@ export class BlazeAdapter {
   }
 
   properties(): any { // {[key: string]: string} | Function
-
     throw new Error('BlazeAdapter.properties() has to be implemented');
   }
 
