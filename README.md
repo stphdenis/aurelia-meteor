@@ -49,7 +49,7 @@ npm install --save aurelia-meteor
 ```js
 import { autoinject } from 'aurelia-framework';
 import { Meteor } from 'aurelia-meteor';
- 
+
 @autoinject
 export class Welcome {
   public meteor: Meteor;
@@ -63,6 +63,7 @@ export class Welcome {
 ```html
 <template>
   <p>status : ${meteor.status}</p>
+  <p>statusString : ${meteor.statusString}</p>
   <p>connected : ${meteor.connected}</p>
   <p>retryCount : ${meteor.retryCount}</p>
   <p>userId : ${meteor.userId}</p>
@@ -76,6 +77,8 @@ export class Welcome {
   <p>createdAt : ${meteor.createdAt}</p>
 </template>
 ```
+
+The difference between `meteor.statusString` and `meteor.status` is that `meteor.statusString` is a string while `meteor.status` is an enum class.
 
 ## Building The Code
 
