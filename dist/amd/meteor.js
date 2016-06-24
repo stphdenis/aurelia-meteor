@@ -1,12 +1,32 @@
-define(['exports', 'meteor/meteor', 'meteor/tracker'], function (exports, _meteor, _tracker) {
+define(['exports', 'meteor/meteor', 'meteor/tracker', 'meteor/ddp'], function (exports, _meteor, _tracker, _ddp) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.Meteor = undefined;
+  exports.Meteor = exports.StatusEnum = undefined;
 
   
+
+  var StatusEnum = exports.StatusEnum = function () {
+    function StatusEnum(name) {
+      
+
+      this.name = name;
+    }
+
+    StatusEnum.prototype.toString = function toString() {
+      return this.name;
+    };
+
+    return StatusEnum;
+  }();
+
+  StatusEnum.connected = new StatusEnum('connected');
+  StatusEnum.connecting = new StatusEnum('connecting');
+  StatusEnum.failed = new StatusEnum('failed');
+  StatusEnum.waiting = new StatusEnum('waiting');
+  StatusEnum.offline = new StatusEnum('offline');
 
   var Meteor = exports.Meteor = function Meteor() {
     var _this = this;
@@ -19,18 +39,47 @@ define(['exports', 'meteor/meteor', 'meteor/tracker'], function (exports, _meteo
       _this.isServer = _meteor.Meteor.isServer;
       _this.release = _meteor.Meteor.release;
     });
+
     _tracker.Tracker.autorun(function () {
-      _this.status = _meteor.Meteor.status().status;
-      _this.connected = _meteor.Meteor.status().connected;
-      _this.retryCount = _meteor.Meteor.status().retryCount;
+      var meteorStatus = _meteor.Meteor.status();
+      _this.statusString = meteorStatus.status;
+      switch (_this.statusString) {
+        case 'connected':
+          _this.status = StatusEnum.connected;
+          break;
+        case 'connecting':
+          _this.status = StatusEnum.connecting;
+          break;
+        case 'failed':
+          _this.status = StatusEnum.failed;
+          break;
+        case 'waiting':
+          _this.status = StatusEnum.waiting;
+          break;
+        case 'offline':
+          _this.status = StatusEnum.offline;
+          break;
+        default:
+          _this.status = undefined;
+      }
+      _this.connected = meteorStatus.connected;
+      _this.retryCount = meteorStatus.retryCount;
     });
+
     _tracker.Tracker.autorun(function () {
       _this.userId = _meteor.Meteor.userId();
-      if (_meteor.Meteor.user()) {
-        _this.address = _meteor.Meteor.user().emails[0].address;
-        _this.verified = _meteor.Meteor.user().emails[0].verified;
-        _this.username = _meteor.Meteor.user().username;
-        _this.createdAt = _meteor.Meteor.user().createdAt;
+
+      var meteorUser = _meteor.Meteor.user();
+      if (meteorUser) {
+        if (meteorUser.emails) {
+          _this.address = meteorUser.emails[0].address;
+          _this.verified = meteorUser.emails[0].verified;
+        } else {
+          _this.address = undefined;
+          _this.verified = undefined;
+        }
+        _this.username = meteorUser.username;
+        _this.createdAt = meteorUser.createdAt;
       } else {
         _this.address = undefined;
         _this.verified = undefined;
