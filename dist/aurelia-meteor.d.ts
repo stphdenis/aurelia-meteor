@@ -5,6 +5,9 @@ import {
   Tracker
 } from 'meteor/tracker';
 import {
+  DDP
+} from 'meteor/ddp';
+import {
   Blaze
 } from 'meteor/blaze';
 import {
@@ -15,12 +18,17 @@ import {
   inlineView,
   bindable
 } from 'aurelia-framework';
+export declare class StatusEnum {
+  constructor(name: string);
+  toString(): string;
+}
 export declare class Meteor {
   isClient: boolean;
   isCordova: boolean;
   isServer: boolean;
   release: string;
-  status: MeteorMeteor.StatusEnum;
+  status: StatusEnum;
+  statusString: string;
   connected: boolean;
   retryCount: number;
   userId: string;

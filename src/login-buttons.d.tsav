@@ -1,7 +1,0 @@
-import { BlazeAdapter } from './blaze-adapter';
-
-export class LoginButtons extends BlazeAdapter {
-  public align: string;
-  public templateName(): string;
-  public properties(): Map<string, string>;
-}
