@@ -15,6 +15,7 @@ export class Meteor {
   public isServer: boolean;
   public release: string;
   public status: StatusEnum;
+  public statusString: string;
   public connected: boolean;
   public retryCount: number;
   public userId: string;
@@ -31,8 +32,8 @@ export class Meteor {
       this.release = MeteorMeteor.release;
     });
     Tracker.autorun(() => {
-      const meteorStatus = MeteorMeteor.status && MeteorMeteor.status();
-      if(meteorStatus) {
+      this.statusString = MeteorMeteor.status && MeteorMeteor.status();
+      if(this.statusString) {
         switch (MeteorMeteor.status().status) {
           case 'connected':
             this.status = StatusEnum.connected;
