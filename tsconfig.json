@@ -1,25 +1,46 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "module": "es2015",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": false,
-    "moduleResolution": "node",
-    "stripInternal": true,
-    "preserveConstEnums": true,
-    "listFiles": true,
-    "declaration": true,
-    "removeComments": true,
-    "lib": ["es2015", "dom"],
-    "allowJs": true
+//    "rootDir": "src",           // Specifies the root directory of input files.
+/*    "rootDirs": [
+      "src"//,
+      //"typings"
+    ],*/                          // Specify list of root directory to be used when resolving modules.
+    "allowJs": false,           // Allow JavaScript files to be compiled.
+    "moduleResolution": "node", // Determine how modules get resolved: 'node' or 'classic'.
+    "lib": [
+      "es2015",
+      "dom"
+    ],                          // "es5", "es6", "es2015", "es7", "es2016", "es2017", "dom",
+                                // "webworker", "scripthost", "es2015.core", "es2015.collection",
+                                // "es2015.generator", "es2015.iterable", "es2015.promise",
+                                // "es2015.proxy", "es2015.reflect", "es2015.symbol",
+                                // "es2015.symbol.wellknown", "es2016.array.include",
+                                // "es2017.object", "es2017.sharedmemory"
+
+    "outDir":"dist",           // Move output to a different directory.
+//    "outFile":"output.js",   // Generate one javascript and one definition file.
+    "declaration": true,     // Generates corresponding .d.ts files.
+    "sourceMap": true,
+    "target": "ES5",         // Specify ECMAScript target version: 'ES3' (default), 'ES5' or 'ES6'.
+    "module": "commonjs",    // Specify module code generation: "commonjs", "amd", "umd", "system", "es6", "es2015", "none".
+
+    "preserveConstEnums": true,     // Do not erase const enum declarations in generated code.
+    "experimentalDecorators": true, // Enables experimental support for ES7 decorators.
+    "emitDecoratorMetadata": true,  // Emit design-time metadate for decorated declarations in source.
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
+    "noImplicitReturns":true,                 // Report error when not all code paths in function return a value.
+//    "noImplicitThis":true,                    // Raise error on 'this' expressions with an implied any type.
+
+    "stripInternal": true,      // Do not emit declarations for code that has an '@internal' annotation.
+    "listFiles": true,          // Print names of files part of the compilation.
+    "removeComments": true,     // Do not emit comments to output.
+    "diagnostics": true
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "doc",
-    "test",
-    "config.js",
-    "gulpfile.js",
-    "karma.conf.js"
+  "files": [
+    "typings/index.d.ts",
+    "src/aurelia-meteor.ts",
+    "src/blaze-adapter.ts",
+    "src/login-buttons.ts",
+    "src/meteor.ts"
   ]
 }
