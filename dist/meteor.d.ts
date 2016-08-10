@@ -11,6 +11,7 @@ export declare class Meteor {
     isServer: boolean;
     release: string;
     status: StatusEnum;
+    statusString: string;
     connected: boolean;
     retryCount: number;
     userId: string;

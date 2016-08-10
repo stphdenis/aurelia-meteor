@@ -19,9 +19,10 @@ var Meteor = (function () {
             _this.release = meteor_1.Meteor.release;
         });
         tracker_1.Tracker.autorun(function () {
-            var meteorStatus = meteor_1.Meteor.status && meteor_1.Meteor.status();
-            if (meteorStatus) {
-                switch (meteor_1.Meteor.status().status) {
+            var status = meteor_1.Meteor.status && meteor_1.Meteor.status();
+            if (status) {
+                _this.statusString = status.status;
+                switch (status.status) {
                     case 'connected':
                         _this.status = StatusEnum.connected;
                         break;
@@ -41,8 +42,8 @@ var Meteor = (function () {
                         _this.status = undefined;
                         break;
                 }
-                _this.connected = meteor_1.Meteor.status().connected;
-                _this.retryCount = meteor_1.Meteor.status().retryCount;
+                _this.connected = status.connected;
+                _this.retryCount = status.retryCount;
             }
             else {
                 _this.status = StatusEnum.offline;
