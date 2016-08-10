@@ -32,10 +32,10 @@ export class Meteor {
       this.release = MeteorMeteor.release;
     });
     Tracker.autorun(() => {
-      const status = MeteorMeteor.status && MeteorMeteor.status();
-      if(status) {
-        this.statusString = status.status;
-        switch (status.status) {
+      const ddpStatus = MeteorMeteor.status && MeteorMeteor.status();
+      if(ddpStatus) {
+        this.statusString = ddpStatus.status;
+        switch (ddpStatus.status) {
           case 'connected':
             this.status = StatusEnum.connected;
             break;
@@ -55,8 +55,8 @@ export class Meteor {
             this.status = undefined;
             break;
         }
-        this.connected = status.connected;
-        this.retryCount = status.retryCount;
+        this.connected = ddpStatus.connected;
+        this.retryCount = ddpStatus.retryCount;
       } else {
         this.status = StatusEnum.offline;
         this.connected = false;
