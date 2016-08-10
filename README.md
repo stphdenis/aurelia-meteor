@@ -6,29 +6,25 @@
 
 This library can be used in the **browser** only.
 
-This library has primarily be done for Meteor 1.3 with use of NPM with commonjs.
+This library has primarily be done for Meteor 1.3+ with use of NPM with commonjs.
 
-the amd, commonjs and es2015 versions should work as is.
-
-The SystemJS configuration is to be done for the folowing modules :
-  - aurelia-framework
-  - meteor/blaze
-  - meteor/templating
+If you want the amd, systemjs, es2015 or other version your welcome to help me.
 
 ## Library content
 
-For now, we only have 3 components :
+For now, we only have 4 components :
   - `BlazeAdaptor` class used to adapt the `<login-buttons>` to be used in Aurelia
   - `<login-buttons>` we can put anywhere in a HTML file
   - `Meteor` class giving live informations on meteor
+  - `reactiveProperty` to make an aurelia property reactive
 
 ## Library use
 
-####1. `BlazeAdaptor` class
+### 1. `BlazeAdaptor` class
 
   See the login-buttons.js file to see how it can be used.
 
-####2. `<login-buttons>`
+### 2. `<login-buttons>`
 
 ```html
 <require from="aurelia-meteor/login-buttons"></require>
@@ -44,7 +40,7 @@ meteor add accounts-ui
 npm install --save aurelia-meteor
 ```
 
-####3. `Meteor` class
+### 3. `Meteor` class
 
 ```js
 import { autoinject } from 'aurelia-framework';
@@ -80,25 +76,40 @@ export class Welcome {
 
 The difference between `meteor.statusString` and `meteor.status` is that `meteor.statusString` is a string while `meteor.status` is an enum class.
 
+### 4. `reactiveProperty`
+
+```js
+import { reactiveProperty } from 'aurelia-meteor';
+import { Tracker } from 'meteor/tracker';
+
+export class SampleClass {
+  @reactiveProperty propertyToBeReactive: boolean;
+
+  constructor() {
+    Tracker.autorun(() => {
+      if (reactiveProperty(this, 'propertyToBeReactive')) {
+        ...
+      }
+    });
+  }
+```
+
+Notice that the parameter string of the function `reactiveProperty` is the property name.
+
+If you have an other solution, please tell me.
+
 ## Building The Code
 
 To build the code, follow these steps.
 
 1. Ensure that [NodeJS](http://nodejs.org/) is installed. This provides the platform on which the build tooling runs.
 
-2. From the project folder, execute the following command:
+2. From the project folder, execute the following commands:
 
   ```shell
   npm install
+  typings install
+  npm build
   ```
-3. Ensure that [Gulp](http://gulpjs.com/) is installed. If you need to install it, use the following command:
 
-  ```shell
-  npm install -g gulp
-  ```
-4. To build the code, you can now run:
-
-  ```shell
-  gulp build
-  ```
-5. You will find the compiled code in the `dist` folder, available in three module formats: AMD, CommonJS and ES6.
+3. You will find the compiled code in the `dist` folder.
