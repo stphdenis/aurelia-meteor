@@ -2,23 +2,8 @@
   "name": "aurelia-meteor",
   "main": "dist/aurelia-meteor.d.ts",
   "version": false,
-  "dependencies": {
-    "aurelia-binding": "npm:aurelia-binding/dist/aurelia-binding.d.ts",
-    "aurelia-dependency-injection": "npm:aurelia-dependency-injection/dist/aurelia-dependency-injection.d.ts",
-    "aurelia-framework": "npm:aurelia-framework/dist/aurelia-framework.d.ts",
-    "aurelia-loader": "npm:aurelia-loader/dist/aurelia-loader.d.ts",
-    "aurelia-logging": "npm:aurelia-logging/dist/aurelia-logging.d.ts",
-    "aurelia-metadata": "npm:aurelia-metadata/dist/aurelia-metadata.d.ts",
-    "aurelia-pal": "npm:aurelia-pal/dist/aurelia-pal.d.ts",
-    "aurelia-path": "npm:aurelia-path/dist/aurelia-path.d.ts",
-    "aurelia-task-queue": "npm:aurelia-task-queue/dist/aurelia-task-queue.d.ts",
-    "aurelia-templating": "npm:aurelia-templating/dist/aurelia-templating.d.ts"
-  },
+  "dependencies": {},
   "globalDependencies": {
-    "es6-collections": "registry:dt/es6-collections#0.5.1+20160316155526",
-    "meteor": "registry:env/meteor#1.3.0+20160623161138"
-  },
-  "globalDevDependencies": {
-    "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504"
+    "meteor": "registry:env/meteor#1.3.0+20160713172414"
   }
 }
