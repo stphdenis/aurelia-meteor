@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
 //    "rootDir": "src",           // Specifies the root directory of input files.
-/*    "rootDirs": [
-      "src"//,
-      //"typings"
-    ],*/                          // Specify list of root directory to be used when resolving modules.
+//    "rootDirs": [
+//      "src",
+//      "typings"
+//    ],                          // Specify list of root directory to be used when resolving modules.
     "allowJs": false,           // Allow JavaScript files to be compiled.
     "moduleResolution": "node", // Determine how modules get resolved: 'node' or 'classic'.
     "lib": [
@@ -38,9 +38,6 @@
   },
   "files": [
     "typings/index.d.ts",
-    "src/aurelia-meteor.ts",
-    "src/blaze-adapter.ts",
-    "src/login-buttons.ts",
-    "src/meteor.ts"
+    "src/aurelia-meteor.ts"
   ]
 }
