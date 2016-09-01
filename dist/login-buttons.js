@@ -15,6 +15,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var aurelia_framework_1 = require('aurelia-framework');
 var blaze_adapter_1 = require('./blaze-adapter');
+require('meteor/accounts-ui');
 var LoginButtons = (function (_super) {
     __extends(LoginButtons, _super);
     function LoginButtons() {
