@@ -6,9 +6,14 @@ import { inject, inlineView } from 'aurelia-framework';
 /**
  * If want to inject into the extended class, you have to inject the current Element
  * and pass it to super() :
- *   constructor(elementRef: Element, xxx: Ttt) {
- *     super(elementRef);
- *     this.xxx = xxx;
+ *   @inject(Element)
+ *   @inject(Ttt)
+ *   export class ExtendedClass extends BlazeAdapter {
+ *     constructor(elementRef: Element, xxx: Ttt) {
+ *       super(elementRef);
+ *       this.xxx = xxx;
+ *     }
+ *     ...
  *   }
  */
 @inlineView('<template></template>')
