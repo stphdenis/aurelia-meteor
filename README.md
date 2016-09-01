@@ -42,6 +42,21 @@ meteor add accounts-ui
 npm install --save aurelia-meteor
 ```
 
+and
+
+**Be shure to have your `index.html` in UTF-8 :**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    ...
+  </head>
+  ...
+</html>
+```
+
 ### 3. `Meteor` class
 
 ```js
