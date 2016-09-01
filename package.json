@@ -79,6 +79,16 @@
   "license": "MIT",
   "main": "dist/aurelia-meteor.js",
   "typings": "dist/aurelia-meteor.d.ts",
+  "aurelia": {
+    "documentation": {
+      "articles": []
+    },
+    "build": {
+      "resources": [
+        "aurelia-meteor/login-buttons"
+      ]
+    }
+  },
   "maintainers": [
     {
       "email": "stph.denis@gmail.com",
