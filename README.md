@@ -50,7 +50,8 @@ If you use a non meteor client like with [`meteor-client-packages-meteor`](https
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!--meta http-equiv="content-type" content="text/html; charset=utf-8" /-->  <!-- HTML4 -->
+    <meta charset="UTF-8"> <!-- HTML5 -->
     ...
   </head>
   ...
