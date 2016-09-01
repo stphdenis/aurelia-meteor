@@ -44,7 +44,7 @@ npm install --save aurelia-meteor
 
 and
 
-**Be shure to have your `index.html` in UTF-8 :**
+If you use a non meteor client like with [`meteor-client-packages-meteor`](https://www.npmjs.com/package/meteor-client-packages-meteor), be shure to have your `index.html` in UTF-8 :
 
 ```html
 <!DOCTYPE html>
