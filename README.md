@@ -8,6 +8,8 @@ This library can be used in the **browser** only.
 
 This library has primarily be done for Meteor 1.3+ with use of NPM with commonjs.
 
+You can use this module with [`meteor-client-packages-meteor`](https://www.npmjs.com/package/meteor-client-packages-meteor) witch is for `Use Meteor's client Packages in a non Meteor project`.
+
 If you want the amd, systemjs, es2015 or other version your welcome to help me.
 
 ## Library content
