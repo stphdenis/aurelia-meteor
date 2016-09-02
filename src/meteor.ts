@@ -66,8 +66,14 @@ export class Meteor {
     Tracker.autorun(() => {
       this.userId = MeteorMeteor.userId && MeteorMeteor.userId();
       if (MeteorMeteor.user && MeteorMeteor.user()) {
-        this.address = MeteorMeteor.user().emails[0].address;
-        this.verified = MeteorMeteor.user().emails[0].verified;
+        const user = MeteorMeteor.user();
+        if (user.emails && user.emails.length > 0) {
+          this.address = MeteorMeteor.user().emails[0].address;
+          this.verified = MeteorMeteor.user().emails[0].verified;
+        } else {
+          this.address = undefined;
+          this.verified = undefined;
+        }
         this.username = MeteorMeteor.user().username;
         this.createdAt = MeteorMeteor.user().createdAt;
       } else {

@@ -54,8 +54,15 @@ var Meteor = (function () {
         tracker_1.Tracker.autorun(function () {
             _this.userId = meteor_1.Meteor.userId && meteor_1.Meteor.userId();
             if (meteor_1.Meteor.user && meteor_1.Meteor.user()) {
-                _this.address = meteor_1.Meteor.user().emails[0].address;
-                _this.verified = meteor_1.Meteor.user().emails[0].verified;
+                var user = meteor_1.Meteor.user();
+                if (user.emails && user.emails.length > 0) {
+                    _this.address = meteor_1.Meteor.user().emails[0].address;
+                    _this.verified = meteor_1.Meteor.user().emails[0].verified;
+                }
+                else {
+                    _this.address = undefined;
+                    _this.verified = undefined;
+                }
                 _this.username = meteor_1.Meteor.user().username;
                 _this.createdAt = meteor_1.Meteor.user().createdAt;
             }
