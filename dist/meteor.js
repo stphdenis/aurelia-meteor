@@ -56,15 +56,15 @@ var Meteor = (function () {
             if (meteor_1.Meteor.user && meteor_1.Meteor.user()) {
                 var user = meteor_1.Meteor.user();
                 if (user.emails && user.emails.length > 0) {
-                    _this.address = meteor_1.Meteor.user().emails[0].address;
-                    _this.verified = meteor_1.Meteor.user().emails[0].verified;
+                    _this.address = user.emails[0].address;
+                    _this.verified = user.emails[0].verified;
                 }
                 else {
                     _this.address = undefined;
                     _this.verified = undefined;
                 }
-                _this.username = meteor_1.Meteor.user().username;
-                _this.createdAt = meteor_1.Meteor.user().createdAt;
+                _this.username = user.username;
+                _this.createdAt = user.createdAt;
             }
             else {
                 _this.address = undefined;

@@ -7,6 +7,7 @@ var blaze_adapter_1 = require('./blaze-adapter');
 exports.BlazeAdapter = blaze_adapter_1.BlazeAdapter;
 var meteor_1 = require('./meteor');
 exports.Meteor = meteor_1.Meteor;
+exports.StatusEnum = meteor_1.StatusEnum;
 function configure(frameworkConfiguration) {
     frameworkConfiguration.globalResources('./login-buttons');
 }
