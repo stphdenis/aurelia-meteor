@@ -68,14 +68,14 @@ export class Meteor {
       if (MeteorMeteor.user && MeteorMeteor.user()) {
         const user = MeteorMeteor.user();
         if (user.emails && user.emails.length > 0) {
-          this.address = MeteorMeteor.user().emails[0].address;
-          this.verified = MeteorMeteor.user().emails[0].verified;
+          this.address = user.emails[0].address;
+          this.verified = user.emails[0].verified;
         } else {
           this.address = undefined;
           this.verified = undefined;
         }
-        this.username = MeteorMeteor.user().username;
-        this.createdAt = MeteorMeteor.user().createdAt;
+        this.username = user.username;
+        this.createdAt = user.createdAt;
       } else {
         this.address = undefined;
         this.verified = undefined;
